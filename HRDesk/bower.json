@@ -1,0 +1,14 @@
+{
+  "name": "asp.net",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "jquery": "3.3.1"
+  },
+  "authors": [
+    "temurturakulov <temur.stark.98@mail.ru>"
+  ],
+  "description": "HRDEsk",
+  "main": "bower.json",
+  "license": "MIT"
+}

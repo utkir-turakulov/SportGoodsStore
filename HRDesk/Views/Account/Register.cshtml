@@ -1,0 +1,33 @@
+﻿@model HRDesk.ViewModels.RegistrViewModel;
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h2>Регистрация нового пользователя</h2>
+
+<form method="post" asp-controller="Account" asp-action="Register">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div>
+        <label for="Email">Email</label><br />
+        <input name="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div>
+        <label for="Date">Date</label></br>
+        <input name="Date" /></br>
+        <span validation-for="Date"></span>
+    </div>
+    <div>
+        <label for="Password">Password</label></br>
+        <input name="Password" /></br>
+        <span asp-validation-for="Password"></span>
+    </div>
+    <div>
+        <label for="PasswordConfirm">PasswordConfirm</label></br>
+        <input name="PasswordConfirm" /></br>
+        <span asp-validation-for="PasswordConfirm"></span>
+    </div>
+    <div>
+        <input type="submit" value="Регистрация"/>
+    </div>
+</form>

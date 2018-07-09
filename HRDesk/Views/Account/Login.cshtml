@@ -1,0 +1,36 @@
+﻿@model HRDesk.ViewModels.LoginViewModel;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, AuthoringTagHelpers
+@addTagHelper AuthoringTagHelpers.TagHelpers.E*, AuthoringTagHelpers
+@addTagHelper AuthoringTagHelpers.TagHelpers.Email*, AuthoringTagHelpers
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h2>Вход в приложение</h2>
+
+<!--<form method="post" asp-action="Login" asp-controller="Account"  asp-route-returnUrl="@Model.ReturnUrl" class="col-md-12" enctype = "multipart/form-data">-->
+@using (Html.BeginForm("Login", "Account", FormMethod.Post, new { enctype = "multipart/form-data", @routerReturnUrl = "@Model.ReturnUrl", @class = "form-horizontal col-md-12" }))
+{
+    <!--Изменить тэг form  и добавить атрибут asp-router-ReturnUrl -->
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="form-group">
+        <label for="Email">Email</label> <br />
+        <input name="Email" type="email" class="form-control col-sm-2" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div class="form-group">
+        <label for="Password">Password</label> <br />
+        <input name="Password" type="password" class="form-control col-sm-2" />
+        <span asp-validation-for="Password"></span>
+    </div>
+    <div class="form-check">
+        <label for="RememberMe" /><br />
+        <input name="RememberMe" type="checkbox" class="form-check-input" asp-for="@Model.RememberMe" value="true" />Запомнить меня
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn" value="Войти" />
+    </div>
+    <!--</form>-->
+
+}

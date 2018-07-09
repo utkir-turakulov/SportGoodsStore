@@ -1,0 +1,12 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, AuthoringTagHelpers
+@addTagHelper AuthoringTagHelpers.TagHelpers.E*, AuthoringTagHelpers
+@addTagHelper AuthoringTagHelpers.TagHelpers.Email*, AuthoringTagHelpers
+@{
+    ViewData["Title"] = "AdminSettings";
+}
+
+<h2>AdminSettings</h2>
+
+<a asp-controller="Roles" asp-action="Roles">Распределение ролей</a><br />
+<a asp-action="Users" asp-controller="Users">Управление пользователями</a>
