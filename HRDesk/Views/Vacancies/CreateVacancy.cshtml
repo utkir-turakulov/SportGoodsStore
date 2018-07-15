@@ -1,0 +1,29 @@
+﻿@model HRDesk.Models.Vacancy
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, AuthoringTagHelpers
+@addTagHelper AuthoringTagHelpers.TagHelpers.E*, AuthoringTagHelpers
+@addTagHelper AuthoringTagHelpers.TagHelpers.Email*, AuthoringTagHelpers
+
+@{
+    ViewData["Title"] = "CreateVacancy";
+}
+
+<h2>Создание вакансии</h2>
+<form asp-action="CreateVacancy" asp-controller="Vacancies" method="post">
+    <div>
+        <label asp-for="Name">Вакансия</label>
+        <input type="text" name="Name" />
+    </div>
+    <div>
+        <label asp-for="OpenDate">Дата открытия</label>
+        <input type="date" name="OpenDate" />
+    </div>
+    <div>
+        <label asp-for="DesiredClosingDate">Планируемая дата закрытия</label>
+        <input type="date" name="DesiredClosingDate" />
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+    </div>
+</form>

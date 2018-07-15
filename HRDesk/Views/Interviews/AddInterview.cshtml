@@ -1,0 +1,48 @@
+﻿@model HRDesk.Models.Interview
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, AuthoringTagHelpers
+@addTagHelper AuthoringTagHelpers.TagHelpers.E*, AuthoringTagHelpers
+@addTagHelper AuthoringTagHelpers.TagHelpers.Email*, AuthoringTagHelpers
+@{
+    ViewData["Title"] = "AddInterview";
+}
+
+<h2>Добавить интевью</h2>
+
+<form method="post" asp-action="AddInterview" asp-controller="Interviews">
+    <div>
+        <label asp-for="PersonName">Имя кондидата</label>
+        <input name="PersonName" type="text" />
+    </div>
+    <div>
+        <label asp-for="PersonSername">Фамилия кондидата</label>
+        <input name="PersonSername" type="text" />
+    </div>
+    <div>
+        <label asp-for="PersonPatronymic">Отчество кондидата</label>
+        <input name="PersonPatronymic" type="text" />
+    </div>
+    <div>
+        <label asp-for="BirthDate">Дата рождения</label>
+        <input name="BirthDate" type="date" />
+    </div>
+    <div>
+        <label asp-for="InterviewDate">Дата проведения интервью</label>
+        <input name="InterviewDate" type="date" />
+    </div>
+    <div>
+        <label asp-for="VacancyId">Вакансия</label>
+        <select name="VacancyId" asp-for="VacancyId">
+            @foreach (var vacancy in ViewBag.Vacancies)
+            {
+                <option value="@vacancy.Id">@vacancy.Name</option>
+            }
+        </select>
+    </div>
+    
+
+        <div>
+            <button type="submit" class="btn btn-info">Добавить</button>
+        </div>
+
+    </form>

@@ -6,7 +6,7 @@ using HRDesk.Models;
 
 namespace HRDesk.ViewModels
 {
-    public class AccountController: Controller
+    public class AccountController : Controller
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
@@ -36,6 +36,7 @@ namespace HRDesk.ViewModels
                 };
 
                 var result = await _userManager.CreateAsync(user, model.Password);
+                await _userManager.AddToRoleAsync(user, "user");
 
                 if (result.Succeeded)
                 {
@@ -50,7 +51,7 @@ namespace HRDesk.ViewModels
                     }
                 }
             }
-            
+
             return View();
         }
 

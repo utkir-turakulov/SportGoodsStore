@@ -7,8 +7,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System.Security.Claims;
-using Microsoft.AspNetCore.Authorization;
 
 namespace HRDesk
 {
@@ -25,11 +23,14 @@ namespace HRDesk
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
-
+          /*  services.AddDbContext<HRDeskContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), o => o.MigrationsAssembly("HRDesk"))
+            );
+            */
             services.AddDbContext<ApplicationContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
+            );
+           
             services.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationContext>()
                 .AddDefaultTokenProviders();
@@ -39,17 +40,9 @@ namespace HRDesk
                     options.LoginPath = new Microsoft.AspNetCore.Http.PathString("Account/Register");
                 });
 
-            /* services.AddAuthorization(opts => {
-                 opts.AddPolicy("Delete", policy => {
-                     policy.RequireClaim("role", "admin","user", "director");
-                 });
-             });*/
+            
 
-            /*services.Configure<IdentityOptions>(options =>
-            {
-                options.User.RequireUniqueEmail = true;
-
-            });*/
+            services.AddMvc();
 
         }
 
@@ -66,8 +59,8 @@ namespace HRDesk
             }
 
             app.UseStaticFiles();
-            app.UseAuthentication();            
-            
+            app.UseAuthentication();
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
@@ -77,7 +70,7 @@ namespace HRDesk
 
                 routes.MapRoute(
                     name: "Vacancies",
-                    template: "{controller=Vacancies}/{action=GetVacancies }/{id?}");
+                    template: "{controller=Vacancies}/{action=Vacancies }/{id?}");
 
                 routes.MapRoute(
                    name: "Create users",
@@ -91,6 +84,12 @@ namespace HRDesk
                     name: "Settings",
                     template: "{controller = Settings}/{action}/{id?}"
                     );
+
+                routes.MapRoute(
+                    name: "Interview",
+                    template: "{controller=Interviews}/{action= Interviews}/{id?}"
+                    );
+
             });
 
             app.Run(async (context) =>

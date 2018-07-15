@@ -1,4 +1,9 @@
-﻿
+﻿@using System.Linq
+@model IEnumerable<HRDesk.Models.Interview>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, AuthoringTagHelpers
+@addTagHelper AuthoringTagHelpers.TagHelpers.E*, AuthoringTagHelpers
+@addTagHelper AuthoringTagHelpers.TagHelpers.Email*, AuthoringTagHelpers
 @{
     ViewData["Title"] = "Interviews";
 }
@@ -9,7 +14,45 @@
 }
 
 <div class="container mt-lg-5">
-    <h2>Interviews</h2>
+    <h2 class="pb-2">Кондидаты</h2>
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Имя</th>
+                <th scope="col">Фамилия</th>
+                <th scope="col">Отчество</th>
+                <th scope="col">Дата рождения</th>
+                <th scope="col">Дата интервью</th>
+                <th scope="col">Вакансия</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var interview in Model)
+            {
+                <tr>
+                    <td scope="row">@interview.Id</td>
+                    <td scope="row">@interview.PersonName</td>
+                    <td scope="row">@interview.PersonSername</td>
+                    <td scope="row">@interview.PersonPatronymic</td>
+                    <td scope="row">@interview.BirthDate</td>
+                    <td scope="row">@interview.InterviewDate</td>
+                    @foreach (var c in @ViewBag.Vacancies)
+                    {
+                        if (@c.Id == @interview.VacancyId)
+                        {
+                            <td scope="row">@c.Name</td>
+                        }
+                    }
+
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+    <a asp-action="AddInterview" asp-controller="Interviews">Добавить интервью</a>
 
 </div>
 

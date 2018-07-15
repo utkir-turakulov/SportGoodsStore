@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using HRDesk.Models;
+using Microsoft.Extensions.Configuration;
+using System.IO;
 
 namespace HRDesk.Data
 {
@@ -11,8 +10,13 @@ namespace HRDesk.Data
     {
         public static async Task InitializeAsync(UserManager<User> userManager, RoleManager<IdentityRole> roleManager)
         {
-            string adminEmail = "admin@mail.ru";
-            string adminPassword = "Admin-95";
+            IConfigurationRoot configuration = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json")
+                .Build();
+
+            string adminEmail = configuration["firstUser:login"].ToString();
+            string adminPassword = configuration["firstUser:password"].ToString();
 
             if (await roleManager.FindByNameAsync("admin") == null)
             {
@@ -21,6 +25,11 @@ namespace HRDesk.Data
             if(await roleManager.FindByNameAsync("user") == null)
             {
                 await roleManager.CreateAsync(new IdentityRole("user"));
+            }
+
+            if (await roleManager.FindByNameAsync("master") == null)
+            {
+                await roleManager.CreateAsync(new IdentityRole("master"));
             }
 
             if (await userManager.FindByNameAsync(adminEmail) == null)
