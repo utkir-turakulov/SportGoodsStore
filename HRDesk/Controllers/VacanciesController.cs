@@ -12,7 +12,7 @@ namespace HRDesk.Controllers
 {
     public class VacanciesController : Controller
     {
-        private readonly ApplicationContext _context;
+       /* private readonly ApplicationContext _context;
 
         public VacanciesController(ApplicationContext context)
         {
@@ -64,6 +64,6 @@ namespace HRDesk.Controllers
                 _context.SaveChanges();
             }
             return Redirect("Vacancies");
-        }
+        }*/
     }
 }

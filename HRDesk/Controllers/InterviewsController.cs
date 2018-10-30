@@ -8,7 +8,7 @@ namespace HRDesk.Controllers
 {
     public class InterviewsController : Controller
     {
-        private ApplicationContext _context;
+      /*  private ApplicationContext _context;
 
         public InterviewsController(ApplicationContext context)
         {
@@ -52,6 +52,6 @@ namespace HRDesk.Controllers
             }
             return View(model);
         }
-
+        */
     }
 }

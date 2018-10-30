@@ -1,0 +1,48 @@
+﻿@model IEnumerable<HRDesk.Models.Product>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, AuthoringTagHelpers
+@addTagHelper AuthoringTagHelpers.TagHelpers.E*, AuthoringTagHelpers
+@addTagHelper AuthoringTagHelpers.TagHelpers.Email*, AuthoringTagHelpers
+@{
+    ViewData["Title"] = "Product";
+}
+
+<h2>Product</h2>
+
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Раздел</th>
+            <th scope="col">Тип</th>
+            <th scope="col">Цена</th>
+            <th scope="col">Количество</th>
+            <th scope="col">Изображение</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <th scope="row">@product.Id</th>
+                <td>@product.Division.Description</td>
+                <td>@product.Section.Description</td>
+                <td>@product.Price</td>
+                <td>@product.Quantity</td>
+                <td>@product.Image.Name+"."+@product.Image.ImageType</td>
+
+
+                @if (User.IsInRole("admin"))
+                {
+                    <td>
+                        <form asp-action="DeleteVacancy" asp-controller="Vacancies" method="post">
+                            <input type="hidden" name="id" value="@product.Id">
+                            <button class="btn btn-danger">Закрыть вакансию</button>
+                        </form>
+
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

@@ -23,10 +23,6 @@ namespace HRDesk
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-          /*  services.AddDbContext<HRDeskContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), o => o.MigrationsAssembly("HRDesk"))
-            );
-            */
             services.AddDbContext<ApplicationContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
             );
@@ -94,7 +90,7 @@ namespace HRDesk
 
             app.Run(async (context) =>
             {
-                context.Response.Redirect("Home/Index");
+               context.Response.Redirect("Home/Index");
             });
 
 

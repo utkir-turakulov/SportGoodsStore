@@ -7,10 +7,12 @@ using System.IO;
 namespace HRDesk.Data
 {
     public class ApplicationContext : IdentityDbContext<User>
-    {
-
-        public DbSet<Vacancy> Vacancies { get; set; }
-        public DbSet<Interview> Interviews { get; set; }
+    {            
+        public DbSet<Division> Divisions { get; set; }
+        public DbSet<Size> Sizes { get; set; }
+        public DbSet<Image> Images { get; set; }
+        public DbSet<Section> Sections { get; set; }
+        public DbSet<Product> Products { get; set; }
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options)
             : base(options) { }
