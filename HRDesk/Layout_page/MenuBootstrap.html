@@ -1,0 +1,347 @@
+<html>
+<head>
+    <link rel="stylesheet"
+          href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+          integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="..\wwwroot\lib\css\site.css">
+
+</head>
+
+<body>
+
+
+<!--Navbar Start-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
+    <div class="row container-fluid">
+
+        <a class="navbar-brand" href="#">Sport Goods Store</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Главная <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Спортивное питание</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Одежда
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Мужская</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Женская</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Подростки</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto nav-flex-icons">
+                <!--<li class="nav-item">
+                    <a class="nav-link waves-effect waves-light"><i class="material-icons" title="Войти"></i></a>
+
+                </li>-->
+                <li class="nav-item">
+                    <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal"
+                            data-target="#authorization-modal" data-whatever="@getbootstrap">Войти
+                    </button>
+                </li>
+                <li class="nav-item active">
+                <li class="nav-item active">
+                    <button type="button" class="btn  btn-primary btn-sm" data-toggle="modal"
+                            data-target="#registration-modal" data-whatever="@getbootstrap">Регистрация
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--Login modal -->
+<div class="modal fade" id="authorization-modal" tabindex="-1" role="dialog" aria-labelledby="authorization-label"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="authorization-label">Авторизация</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="auth-login" class="col-form-label">Login:</label>
+                        <input type="text" class="form-control" id="auth-login">
+                    </div>
+                    <div class="form-group">
+                        <label for="auth-pass" class="col-form-label">Password:</label>
+                        <textarea class="form-control" id="auth-pass"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Send</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Authorization modal-->
+
+<div class="modal fade" id="registration-modal" tabindex="-1" role="dialog" aria-labelledby="registration-modal-label"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registration-modal-label">Регистрация</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="register-login" class="col-form-label">Login:</label>
+                        <input type="text" class="form-control" id="register-login">
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password" class="col-form-label">Password:</label>
+                        <textarea class="form-control" id="register-password"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-pass-confirm" class="col-form-label">Confirm password:</label>
+                        <textarea class="form-control" id="register-pass-confirm"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Register</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Carousel-->
+<div class="container">
+    <div id="carouselExampleControls" class="carousel slide carousel-fade " data-ride="carousel">
+        <ol class="carousel-indicators">
+            <il data-target="#carouselExampleControls" data-slide-to="0"></il>
+            <il data-target="#carouselExampleControls" data-slide-to="1"></il>
+            <il data-target="#carouselExampleControls" data-slide-to="2"></il>
+            <il data-target="#carouselExampleControls" data-slide-to="3"></il>
+            <il data-target="#carouselExampleControls" data-slide-to="4"></il>
+        </ol>
+
+
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+                <img class="d-block w-100 img-fluid" src="https://mdbootstrap.com/img/Photos/Slides/img%20(45).jpg"
+                     alt="First slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Живи</h5>
+                    <p>...</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="view hm-black-light">
+                    <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(46).jpg"
+                         alt="Second slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Питайся правильно</h5>
+                        <p>...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="view hm-black-strong">
+                    <img class="d-block w-100 img-fluid"
+                         src="https://olimpikfit.ru/wp-content/themes/Botstrap_new/images/slide-top/b.jpg"
+                         alt="Third slide">
+                </div>
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Путешествуй</h5>
+                    <p>...</p>
+                </div>
+
+            </div>
+            <div class="carousel-item">
+                <!--Mask color-->
+                <div class="view">
+                    <img class="d-block w-100 img-fluid"
+                         src="https://www.manners.nl/wp-content/uploads/2018/01/image-2018-01-10-2.jpg"
+                         alt="Second slide">
+                    <div class="mask rgba-black-strong"></div>
+                </div>
+                <div class="carousel-caption">
+                    <h3 class="h3-responsive">Strong mask</h3>
+                    <p>Secondary text</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <!--Mask color-->
+                <div class="view">
+                    <img class="d-block w-100 img-fluid"
+                         src="http://horamsk.ru/uploads/posts/2018-09/sport-ne-yavlyaetsya-garantirovannoy-zaschitoy-protiv-bolezney-serdca-uchenye_1.jpg"
+                         alt="Second slide">
+                    <div class="mask rgba-black-strong"></div>
+                </div>
+                <div class="carousel-caption">
+                    <h3 class="h3-responsive">Strong mask</h3>
+                    <p>Secondary text</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+
+<div class="page-content w-100 mt-4">
+    <div class="container">
+        <div class="row container " >
+            <div class="card w-25 h-30 mr-4 col-lg-2 col-md-4 mb-4 rounded-10">
+                <!-- Card image -->
+                <img class="card-img-top" src="https://ae01.alicdn.com/kf/HTB1_vzVXXzsK1Rjy1Xbq6xOaFXa4.jpg_200x200.jpg"
+                     alt="Card image cap">
+                <!-- Card content -->
+                <div class="card-body">
+                    <!-- Title -->
+                    <h3 class="card-title"><a>Шорты</a></h3>
+                    <!-- Text -->
+                    <p class="card-text">391 руб.</p>
+                    <!-- Button -->
+                    <a href="#" class="btn btn-primary">Buy</a>
+                </div>
+            </div>
+
+            <div class="card w-25 h-30 col-lg-2 col-md-4 mb-4 mr-4">
+                <!-- Card image -->
+                <img class="card-img-top" src="https://ae01.alicdn.com/kf/ULB8isZrjYnJXKJkSahGq6xhzFXa4.jpg_350x350.jpg"
+                     alt="Card image cap">
+                <!-- Card content -->
+                <div class="card-body">
+                    <!-- Title -->
+                    <h4 class="card-title"><a>Card title</a></h4>
+                    <!-- Text -->
+                    <p class="card-text">2394 руб.</p>
+                    <!-- Button -->
+                    <a href="#" class="btn btn-primary">Buy</a>
+                </div>
+            </div>
+
+            <div class="card w-25 h-30 mr-4 col-lg-2 col-md-4 mb-4">
+                <!-- Card image -->
+                <img class="card-img-top" src="https://ae01.alicdn.com/kf/ULB8w_uzEmnEXKJk43Ubq6zLppXae/10-11-REEBOK-BK3336.jpg_350x350.jpg"
+                     alt="Card image cap">
+                <!-- Card content -->
+                <div class="card-body">
+                    <!-- Title -->
+                    <h3 class="card-title"><a>Card title</a></h3>
+                    <!-- Text -->
+                    <p class="card-text">1194 руб.</p>
+                    <!-- Button -->
+                    <a href="#" class="btn btn-primary">Buy</a>
+                </div>
+            </div>
+
+            <div class="card w-25 h-30 mr-4 col-lg-2 col-md-4 mb-4">
+                <!-- Card image -->
+                <img class="card-img-top" src="https://ae01.alicdn.com/kf/HTB1dLXpXsrrK1RjSspaq6AREXXav.jpg_350x350.jpg"
+                     alt="Card image cap">
+                <!-- Card content -->
+                <div class="card-body">
+                    <!-- Title -->
+                    <h3 class="card-title"><a>Card title</a></h3>
+                    <!-- Text -->
+                    <p class="card-text">3806 руб.</p>
+                    <!-- Button -->
+                    <a href="#" class="btn btn-primary">Buy</a>
+                </div>
+            </div>
+            <div class="card w-25 h-30 mr-4 col-lg-2 col-md-4 mb-4">
+                <!-- Card image -->
+                <img class="card-img-top" src="https://ae01.alicdn.com/kf/HTB1xP5jXoLrK1Rjy1zbq6AenFXa1.jpg_350x350.jpg"
+                     alt="Card image cap">
+                <!-- Card content -->
+                <div class="card-body">
+                    <!-- Title -->
+                    <h3 class="card-title"><a>Card title</a></h3>
+                    <!-- Text -->
+                    <p class="card-text">7382,70 руб.</p>
+                    <!-- Button -->
+                    <a href="#" class="btn btn-primary">Buy</a>
+                </div>
+            </div>
+
+            <div class="card w-25 h-30 mr-4 col-lg-2 col-md-4 mb-4">
+                <!-- Card image -->
+                <img class="card-img-top" src="https://ae01.alicdn.com/kf/HTB1N9igXcvrK1Rjy0Feq6ATmVXaI.jpg_350x350.jpg"
+                     alt="Card image cap">
+                <!-- Card content -->
+                <div class="card-body">
+                    <!-- Title -->
+                    <h3 class="card-title"><a>Card title</a></h3>
+                    <!-- Text -->
+                    <p class="card-text">1937,77 руб.</p>
+                    <!-- Button -->
+                    <a href="#" class="btn btn-primary">Buy</a>
+                </div>
+            </div>
+
+            <div class="card w-25 h-30 mr-4 col-lg-2 col-md-4 mb-4">
+                <!-- Card image -->
+                <img class="card-img-top" src="https://ae01.alicdn.com/kf/HTB1OwKkdxTpK1RjSZFMq6zG_VXaS.jpg_350x350.jpg"
+                     alt="Card image cap">
+                <!-- Card content -->
+                <div class="card-body">
+                    <!-- Title -->
+                    <h3 class="card-title"><a>Card title</a></h3>
+                    <!-- Text -->
+                    <p class="card-text">2189 руб.</p>
+                    <!-- Button -->
+                    <a href="#" class="btn btn-primary">Buy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Navbar End-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"
+        integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
+        crossorigin="anonymous"></script>
+<script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
+        integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
+        crossorigin="anonymous"></script>
+<script>$(document).ready(function () {
+    $('body').bootstrapMaterialDesign();
+    $('.carousel').carousel();
+});</script>
+</body>
+</html>
