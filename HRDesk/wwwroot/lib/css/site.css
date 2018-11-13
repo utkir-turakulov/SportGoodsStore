@@ -51,50 +51,118 @@
 	padding-left:60px;
 }
 
+
+
+
+
 html {
-  font-size: 1rem; !important
+    font-size: 1rem;
 }
 
 @include media-breakpoint-up(sm) {
-  html {
-    font-size: 1.2rem; !important
-  }
+    html {
+        font-size: 1.2rem;
+    }
+
+    h1{
+        font-size: 1rem;
+    }
 }
 
 @include media-breakpoint-up(md) {
-  html {
-    font-size: 1.4rem; !important
-  }
+    html {
+        font-size: 1.4rem;
+    }
 }
 
 @include media-breakpoint-up(lg) {
-  html {
-    font-size: 1.6rem; !important
-  }
+    html {
+        font-size: 1.6rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+        html {
+            font-size: 1.6rem;
+        }
+    }
 }
 
-body {
-    font-size: 100%; /* начните с гибкой исходной базы, более подробно об этом написано в следующем разделе */
-}
- 
 h1 {
-    font-size: 2.5em;
+    font-size: 1rem;
 }
- 
-@media screen and (max-width: 50em) {
-    h1 {
-        font-size:2em;
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 500px) {
+    .card h1.card-title {
+        font-size: 0.9rem;
+      //  color: rebeccapurple;
+    }
+    /*1rem = 16px*/
+}
+
+
+@media (min-width: 630px) and (max-width: 800px) {
+    .card h1.card-title {
+        font-size: 1rem;
+    }
+    /*1rem = 16px*/
+}
+
+@media (min-width: 801px) and (max-width: 900px) {
+    .card h1.card-title {
+        font-size: 1.15rem;
+    }
+    /*1rem = 16px*/
+}
+
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 901px) and (max-width: 960px) {
+    .card h1.card-title {
+        font-size: 1.2rem;
+        word-break: break-word;
+    }
+    /*1rem = 16px*/
+}
+
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+Custom media queries
+
+/* Set width to make card deck cards 100% width */
+@media (min-width: 960px) and (max-width:980px) {
+    .card h1.card-title{ 
+    font-size: 1.3rem;
+   // color: red;
+}
+}
+
+/* Set width to make card deck cards 100% width */
+@media (min-width: 981px) and (max-width:1000px) {
+    .card h1.card-title {
+        font-size: 1.3rem;
+       // color: red;
     }
 }
- 
-@media screen and (max-width: 40em) {
-    h1 {
-        font-size:1.5em;
+
+/* Set width to make card deck cards 100% width */
+@media (min-width: 1000px) and (max-width:1200px) {
+    .card h1.card-title {
+        font-size: 1.35rem;
+      //  color: red;
     }
 }
- 
-@media screen and (max-width: 30em) {
-    h1 {
-        font-size:1.2em;
+
+
+/* Extra large devices (large desktops, 1200px and up) */
+
+@media (min-width: 1200px) {
+    .card h1.card-title {
+        font-size: 1.4rem;
     }
+    /*1rem = 16px*/
+}
+
+.text-responsive {
+    font-size: calc(100% + 1vw + 1vh);
 }
