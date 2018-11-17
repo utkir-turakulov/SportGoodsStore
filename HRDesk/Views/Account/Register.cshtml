@@ -3,31 +3,50 @@
     ViewData["Title"] = "Register";
 }
 
-<h2>Регистрация нового пользователя</h2>
+<div class="container pl-lg-4">
+    <h2>Регистрация нового пользователя</h2>
 
-<form method="post" asp-controller="Account" asp-action="Register">
-    <div asp-validation-summary="ModelOnly"></div>
-    <div>
-        <label for="Email">Email</label><br />
-        <input name="Email" />
-        <span asp-validation-for="Email"></span>
-    </div>
-    <div>
-        <label for="Date">Date</label></br>
-        <input name="Date" /></br>
-        <span validation-for="Date"></span>
-    </div>
-    <div>
-        <label for="Password">Password</label></br>
-        <input name="Password" /></br>
-        <span asp-validation-for="Password"></span>
-    </div>
-    <div>
-        <label for="PasswordConfirm">PasswordConfirm</label></br>
-        <input name="PasswordConfirm" /></br>
-        <span asp-validation-for="PasswordConfirm"></span>
-    </div>
-    <div>
-        <input type="submit" value="Регистрация"/>
-    </div>
-</form>
+        <form method="post" asp-controller="Account" asp-action="Register" class="form-horizontal  ">
+            
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="form-group">
+                    <label for="Email">Email</label><br />
+                    <input name="Email" class="form-control col-sm-4" />
+                    <span asp-validation-for="Email"></span>
+                </div>
+         
+            <!--<div class="form-group pmd-textfield pmd-textfield-floating-label col-sm-4">
+            <label for="Date">Date</label></br>
+            <input type="text" name="Date" type="text" id="datetimepicker-default" class="form-control col-sm-4 datepicker" /></br>
+            <span validation-for="Date"></span>
+        </div>-->
+            <div class="row">
+                <div class="col-5">
+                    <div class="form-group pmd-textfield pmd-textfield-floating-label ">
+                        <label class="control-label " for="datetimepicker-default">Select Date and Time</label>
+                        <input type="text" id="datetimepicker-default" class="form-control col-5" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="Password">Password</label></br>
+                <input name="Password" class="form-control col-sm-4" /></br>
+                <span asp-validation-for="Password"></span>
+            </div>
+            <div class="form-group">
+                <label for="PasswordConfirm">PasswordConfirm</label></br>
+                <input name="PasswordConfirm" class="form-control col-sm-4" /></br>
+                <span asp-validation-for="PasswordConfirm"></span>
+            </div>
+            <div>
+                <button class="btn btn-success btn-outline-primary">
+                    Регистрация
+                </button>
+            </div>
+
+
+
+        </form>
+
+</div>

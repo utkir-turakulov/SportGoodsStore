@@ -1,8 +1,194 @@
 ﻿@{
     ViewData["Title"] = "Index";
 }
-<div class="container pt-3">
-    <h2>Главная</h2>
+<div class="container ">
+    <!--Carousel-->
+    <div class="container">
+        <div id="carouselExampleControls" class="carousel slide carousel-fade " data-ride="carousel">
+            <ol class="carousel-indicators">
+                <il data-target="#carouselExampleControls" data-slide-to="0"></il>
+                <il data-target="#carouselExampleControls" data-slide-to="1"></il>
+                <il data-target="#carouselExampleControls" data-slide-to="2"></il>
+                <il data-target="#carouselExampleControls" data-slide-to="3"></il>
+                <il data-target="#carouselExampleControls" data-slide-to="4"></il>
+            </ol>
+
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                    <img class="d-block w-100 img-fluid" src="https://mdbootstrap.com/img/Photos/Slides/img%20(45).jpg"
+                         alt="First slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Живи</h5>
+                        <p>...</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="view hm-black-light">
+                        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(46).jpg"
+                             alt="Second slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Питайся правильно</h5>
+                            <p>...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="view hm-black-strong">
+                        <img class="d-block w-100 img-fluid"
+                             src="https://olimpikfit.ru/wp-content/themes/Botstrap_new/images/slide-top/b.jpg"
+                             alt="Third slide">
+                    </div>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Путешествуй</h5>
+                        <p>...</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <!--Mask color-->
+                    <div class="view">
+                        <img class="d-block w-100 img-fluid"
+                             src="https://www.manners.nl/wp-content/uploads/2018/01/image-2018-01-10-2.jpg"
+                             alt="Second slide">
+                        <div class="mask rgba-black-strong"></div>
+                    </div>
+                    <div class="carousel-caption">
+                        <h3 class="h3-responsive">Strong mask</h3>
+                        <p>Secondary text</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <!--Mask color-->
+                    <div class="view">
+                        <img class="d-block w-100 img-fluid"
+                             src="http://horamsk.ru/uploads/posts/2018-09/sport-ne-yavlyaetsya-garantirovannoy-zaschitoy-protiv-bolezney-serdca-uchenye_1.jpg"
+                             alt="Second slide">
+                        <div class="mask rgba-black-strong"></div>
+                    </div>
+                    <div class="carousel-caption">
+                        <h3 class="h3-responsive">Strong mask</h3>
+                        <p>Secondary text</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+
+    <!--Контент-->
+    <div class="page-content w-100 mt-4">
+        <div class="container">
+            <div class="row  ">
+                <div class="card w-25 h-30 mr-4 col-lg-2 col-md-2 mb-4 col-xl-2 col-sm-4" style="width: 12rem;">
+                    <!-- Card image -->
+                    <img class="card-img-top" src="https://ae01.alicdn.com/kf/HTB1_vzVXXzsK1Rjy1Xbq6xOaFXa4.jpg_200x200.jpg"
+                         alt="Card image cap">
+                    <!-- Card content -->
+                    <div class="card-body">
+                        <!-- Title -->
+                        <h1 class="card-title"><a>Шорты Reedok</a></h1>
+                        <!-- Text -->
+                        <p class="card-text">391 руб.</p>
+                        <!-- Button -->
+                        <a href="#" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+                <div class="card w-25 h-30 col-lg-2 col-md-2 mb-4 mr-4 col-xl-2 col-sm-4">
+                    <!-- Card image -->
+                    <img class="card-img-top" src="https://ae01.alicdn.com/kf/ULB8isZrjYnJXKJkSahGq6xhzFXa4.jpg_350x350.jpg"
+                         alt="Card image cap">
+                    <!-- Card content -->
+                    <div class="card-body">
+                        <!-- Title -->
+                        <h1 class="card-title"><a>Футболка Reebok</a></h1>
+                        <!-- Text -->
+                        <p class="card-text">2394 руб.</p>
+                        <!-- Button -->
+                        <a href="#" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+                <!--
+                            <div class="card w-25 h-30 mr-4 col-lg-2 col-md-4 mb-4 col-xl-2">
+
+                                <img class="card-img-top" src="https://ae01.alicdn.com/kf/ULB8w_uzEmnEXKJk43Ubq6zLppXae/10-11-REEBOK-BK3336.jpg_350x350.jpg"
+                                     alt="Card image cap">
+
+                                <div class="card-body">
+
+                                    <h1 class="card-title"><a>Рубашка поло</a></h1>
+
+                                    <p class="card-text">1194 руб.</p>
+
+                                    <a href="#" class="btn btn-primary">Buy</a>
+                                </div>
+                            </div>
+                            -->
+                <div class="card w-25 h-30 mr-4 col-lg-2 col-md-2 mb-4 col-sm-4">
+                    <!-- Card image -->
+                    <img class="card-img-top" src="https://ae01.alicdn.com/kf/HTB1dLXpXsrrK1RjSspaq6AREXXav.jpg_350x350.jpg"
+                         alt="Card image cap">
+                    <!-- Card content -->
+                    <div class="card-body">
+                        <!-- Title -->
+                        <h1 class="card-title"><a>Card title</a></h1>
+                        <!-- Text -->
+                        <p class="card-text">3806 руб.</p>
+                        <!-- Button -->
+                        <a href="#" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+                <div class="card w-25 h-30 mr-4 col-lg-2 col-md-2 mb-4 col-sm-4">
+                    <!-- Card image -->
+                    <img class="card-img-top" src="https://ae01.alicdn.com/kf/HTB1xP5jXoLrK1Rjy1zbq6AenFXa1.jpg_350x350.jpg"
+                         alt="Card image cap">
+                    <!-- Card content -->
+                    <div class="card-body">
+                        <!-- Title -->
+                        <h1 class="card-title"><a>Card title</a></h1>
+                        <!-- Text -->
+                        <p class="card-text">7382,70 руб.</p>
+                        <!-- Button -->
+                        <a href="#" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+                <div class="card w-25 h-30 mr-4 col-lg-2 col-md-2 mb-4 col-sm-4">
+                    <!-- Card image -->
+                    <img class="card-img-top" src="https://ae01.alicdn.com/kf/HTB1N9igXcvrK1Rjy0Feq6ATmVXaI.jpg_350x350.jpg"
+                         alt="Card image cap">
+                    <!-- Card content -->
+                    <div class="card-body">
+                        <!-- Title -->
+                        <h1 class="card-title"><a>Card title</a></h1>
+                        <!-- Text -->
+                        <p class="card-text">1937,77 руб.</p>
+                        <!-- Button -->
+                        <a href="#" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+                <div class="card w-25 h-30 mr-4 col-lg-2 col-md-2 mb-4 col-sm-4" style="width: 18rem;">
+                    <!-- Card image -->
+                    <img class="card-img-top" src="https://ae01.alicdn.com/kf/HTB1OwKkdxTpK1RjSZFMq6zG_VXaS.jpg_350x350.jpg"
+                         alt="Card image cap">
+                    <!-- Card content -->
+                    <div class="card-body">
+                        <!-- Title -->
+                        <h1 class="card-title"><a>Card title</a></h1>
+                        <!-- Text -->
+                        <p class="card-text">2189 руб.</p>
+                        <!-- Button -->
+                        <a href="#" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
 

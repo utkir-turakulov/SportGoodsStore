@@ -35,20 +35,20 @@
     }
 }
 
-.text-white{
+.text-white {
     text-decoration-color: aliceblue;
 }
 
-.main-content{
-    padding-top:60px;
-}
-
-#content-container{
+.main-content {
     padding-top: 60px;
 }
 
-.search-panel{
-	padding-left:60px;
+#content-container {
+    padding-top: 60px;
+}
+
+.search-panel {
+    padding-left: 60px;
 }
 
 
@@ -64,7 +64,7 @@ html {
         font-size: 1.2rem;
     }
 
-    h1{
+    h1 {
         font-size: 1rem;
     }
 }
@@ -95,7 +95,7 @@ h1 {
 @media (min-width: 500px) {
     .card h1.card-title {
         font-size: 0.9rem;
-      //  color: rebeccapurple;
+        // color: rebeccapurple;
     }
     /*1rem = 16px*/
 }
@@ -131,17 +131,17 @@ Custom media queries
 
 /* Set width to make card deck cards 100% width */
 @media (min-width: 960px) and (max-width:980px) {
-    .card h1.card-title{ 
-    font-size: 1.3rem;
-   // color: red;
-}
+    .card h1.card-title {
+        font-size: 1.3rem;
+        // color: red;
+    }
 }
 
 /* Set width to make card deck cards 100% width */
 @media (min-width: 981px) and (max-width:1000px) {
     .card h1.card-title {
         font-size: 1.3rem;
-       // color: red;
+        // color: red;
     }
 }
 
@@ -149,7 +149,7 @@ Custom media queries
 @media (min-width: 1000px) and (max-width:1200px) {
     .card h1.card-title {
         font-size: 1.35rem;
-      //  color: red;
+        // color: red;
     }
 }
 
@@ -166,3 +166,22 @@ Custom media queries
 .text-responsive {
     font-size: calc(100% + 1vw + 1vh);
 }
+
+
+
+/*Datepicker start space*/
+/* Bootstrap css */
+@import "https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css";
+
+/* Google Material icons */
+@import "http://fonts.googleapis.com/icon?family=Material+Icons";
+
+/* Propeller css */
+@import "dist/css/propeller.min.css";
+
+/* Bootstrap datetimepicker */
+@import "datetimepicker/css/bootstrap-datetimepicker.css";
+
+/* Propeller datetimepicker */
+@import "datetimepicker/css/pmd-datetimepicker.css";
+/*Datepicker end space*/
