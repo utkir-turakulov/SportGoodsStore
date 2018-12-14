@@ -30,12 +30,13 @@ namespace SportStore.Controllers
             var sizes = await _context.Sizes.ToListAsync();
             var sections = await _context.Sections.ToListAsync();
             var divisions = await _context.Divisions.ToListAsync();
+			var products = await _context.Products.ToListAsync();
 
-            ViewBag.Images = images;
+			ViewBag.Images = images;
             ViewBag.Sizes = sizes;
             ViewBag.Sections = sections;
             ViewBag.Divisions = divisions;
-
+			ViewBag.Products = products;
             return View("FillTableView");
         }
 

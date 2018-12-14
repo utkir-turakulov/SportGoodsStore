@@ -2,15 +2,13 @@
 @{
     ViewData["Title"] = "FillTableView";
 }
-
 <h2>FillTableView</h2>
-
 <h3>Таблица Секции</h3>
 <table class="table table-striped">
     <thead class="thead-light">
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Секция</th>         
+            <th scope="col">Секция</th>
         </tr>
     </thead>
     <tbody>
@@ -19,13 +17,10 @@
             <tr>
                 <th scope="row">@item.Id</th>
                 <td>@item.Description</td>
-
                 @if (User.IsInRole("admin"))
                 {
 
                 }
-
-
 
             </tr>
         }
@@ -33,10 +28,93 @@
         <a id="scale-demo" href="#!" class="btn-floating btn-large scale-transition">
             <i class="material-icons">add</i>
         </a>
-        <button type="button" class="btn btn-danger bmd-btn-fab">
+        <!--<button type="button" class="btn btn-danger bmd-btn-fab">
             <i class="material-icons">grade</i>
-        </button>
+        </button>-->
 
+    </tbody>
+</table>
+
+<h3>Таблица разделения</h3>
+<table class="table table-striped">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Секция</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.Divisions)
+        {
+            <tr>
+                <th scope="row">@item.Id</th>
+                <td>@item.Description</td>
+            </tr>
+        }
+
+        <!-- Scaled in -->
+        <a id="scale-demo" href="#!" class="btn-floating btn-large scale-transition">
+            <i class="material-icons">add</i>
+        </a>
+        <!--<button type="button" class="btn btn-danger bmd-btn-fab">
+            <i class="material-icons">grade</i>
+        </button>-->
+
+    </tbody>
+</table>
+
+<h3>Таблица размеров</h3>
+<table class="table table-striped">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Секция</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.Sizes)
+        {
+            <tr>
+                <th scope="row">@item.Id</th>
+                <td>@item.Description</td>
+            </tr>
+        }
+
+        <!-- Scaled in -->
+        <a id="scale-demo" href="#!" class="btn-floating btn-large scale-transition">
+            <i class="material-icons">add</i>
+        </a>
+        <!--<button type="button" class="btn btn-danger bmd-btn-fab">
+            <i class="material-icons">grade</i>
+        </button>-->
+
+    </tbody>
+</table>
+
+<h3>Таблица продуктов</h3>
+<table class="table table-striped">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Секция</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.Products)
+        {
+            <tr>
+                <th scope="row">@item.Id</th>
+                <td>@item.Description</td>
+            </tr>
+        }
+
+        <!-- Scaled in -->
+        <a id="scale-demo" href="#!" class="btn-floating btn-large scale-transition">
+            <i class="material-icons">add</i>
+        </a>
+        <!--<button type="button" class="btn btn-danger bmd-btn-fab">
+            <i class="material-icons">grade</i>
+        </button>-->
 
     </tbody>
 </table>
